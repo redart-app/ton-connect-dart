@@ -1,0 +1,4 @@
+name: tonconnect
+
+packages:
+  - packages/**
