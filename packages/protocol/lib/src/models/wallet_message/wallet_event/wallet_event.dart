@@ -1,12 +1,13 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:tonconnect_protocol/src/models/wallet_message/wallet_event/wallet_event_payload.dart';
+import 'package:tonconnect_protocol/src/models/wallet_message/wallet_message.dart';
 
 part 'wallet_event.freezed.dart';
 
 part 'wallet_event.g.dart';
 
 @freezed
-class WalletEvent with _$WalletEvent {
+class WalletEvent extends WalletMessage with _$WalletEvent {
   const factory WalletEvent({
     required WalletEventType event,
     required num id,
@@ -18,7 +19,8 @@ class WalletEvent with _$WalletEvent {
   factory WalletEvent.fromJson(Map<String, dynamic> json) =>
       _$WalletEventFromJson(json);
 
-  static Object? upperReadValue(Map<dynamic, dynamic> json, String? key) => json;
+  static Object? upperReadValue(Map<dynamic, dynamic> json, String? key) =>
+      json;
 }
 
 class _WalletEventPayloadJsonConverter
