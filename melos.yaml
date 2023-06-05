@@ -2,3 +2,7 @@ name: tonconnect
 
 packages:
   - packages/**
+
+scripts:
+  build_runner:
+    run: melos exec --depends-on="build_runner" -- "dart pub run build_runner build --delete-conflicting-outputs"
