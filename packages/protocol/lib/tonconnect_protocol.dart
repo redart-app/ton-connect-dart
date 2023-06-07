@@ -1,8 +1,6 @@
-/// Support for doing something awesome.
-///
-/// More dartdocs go here.
 library tonconnect_protocol;
 
-export 'src/tonconnect_protocol_base.dart';
+export 'src/crypto/crypto.dart';
+export 'src/models/models.dart';
+export 'src/utils/utils.dart';
 
-// TODO: Export any libraries intended for clients of this package.
