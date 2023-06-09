@@ -354,9 +354,6 @@ abstract class _$$_ProofCopyWith<$Res>
       {ConnectItemReplyName name,
       @JsonKey(includeIfNull: false) TonProofItemReplySuccess? proof,
       @JsonKey(includeIfNull: false) TonProofItemReplyError? error});
-
-  $TonProofItemReplySuccessCopyWith<$Res>? get proof;
-  $TonProofItemReplyErrorCopyWith<$Res>? get error;
 }
 
 /// @nodoc
@@ -387,30 +384,6 @@ class __$$_ProofCopyWithImpl<$Res>
           : error // ignore: cast_nullable_to_non_nullable
               as TonProofItemReplyError?,
     ));
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $TonProofItemReplySuccessCopyWith<$Res>? get proof {
-    if (_value.proof == null) {
-      return null;
-    }
-
-    return $TonProofItemReplySuccessCopyWith<$Res>(_value.proof!, (value) {
-      return _then(_value.copyWith(proof: value));
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $TonProofItemReplyErrorCopyWith<$Res>? get error {
-    if (_value.error == null) {
-      return null;
-    }
-
-    return $TonProofItemReplyErrorCopyWith<$Res>(_value.error!, (value) {
-      return _then(_value.copyWith(error: value));
-    });
   }
 }
 
@@ -445,13 +418,17 @@ class _$_Proof implements _Proof {
         (other.runtimeType == runtimeType &&
             other is _$_Proof &&
             (identical(other.name, name) || other.name == name) &&
-            (identical(other.proof, proof) || other.proof == proof) &&
-            (identical(other.error, error) || other.error == error));
+            const DeepCollectionEquality().equals(other.proof, proof) &&
+            const DeepCollectionEquality().equals(other.error, error));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, name, proof, error);
+  int get hashCode => Object.hash(
+      runtimeType,
+      name,
+      const DeepCollectionEquality().hash(proof),
+      const DeepCollectionEquality().hash(error));
 
   @JsonKey(ignore: true)
   @override

@@ -1,0 +1,3 @@
+<component name="DependencyValidationManager">
+  <scope name="Protocol" pattern="file[melos_tonconnect_protocol]:*/" />
+</component>

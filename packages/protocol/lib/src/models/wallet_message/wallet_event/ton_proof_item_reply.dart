@@ -5,27 +5,21 @@ part 'ton_proof_item_reply.freezed.dart';
 part 'ton_proof_item_reply.g.dart';
 
 @freezed
-class TonProofItemReplySuccess with _$TonProofItemReplySuccess {
-  const factory TonProofItemReplySuccess({
+class TonProofItemReply with _$TonProofItemReply {
+  const factory TonProofItemReply.success({
     required num timestamp,
     required ProofDomain domain,
     required String payload,
     required String signature,
-  }) = _TonProofItemReplySuccess;
+  }) = TonProofItemReplySuccess;
 
-  factory TonProofItemReplySuccess.fromJson(Map<String, dynamic> json) =>
-      _$TonProofItemReplySuccessFromJson(json);
-}
-
-@freezed
-class TonProofItemReplyError with _$TonProofItemReplyError {
-  const factory TonProofItemReplyError({
+  const factory TonProofItemReply.error({
     required CONNECT_ITEM_ERROR_CODES code,
     String? message,
-  }) = _TonProofItemReplyError;
+  }) = TonProofItemReplyError;
 
-  factory TonProofItemReplyError.fromJson(Map<String, dynamic> json) =>
-      _$TonProofItemReplyErrorFromJson(json);
+  factory TonProofItemReply.fromJson(Map<String, dynamic> json) =>
+      _$TonProofItemReplyFromJson(json);
 }
 
 @freezed
@@ -38,8 +32,6 @@ class ProofDomain with _$ProofDomain {
   factory ProofDomain.fromJson(Map<String, dynamic> json) =>
       _$ProofDomainFromJson(json);
 }
-
-enum TonProofItemReplyName { ton_proof }
 
 enum CONNECT_ITEM_ERROR_CODES {
   @JsonValue(0)

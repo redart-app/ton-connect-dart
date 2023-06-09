@@ -6,36 +6,40 @@ part of 'ton_proof_item_reply.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_TonProofItemReplySuccess _$$_TonProofItemReplySuccessFromJson(
+_$TonProofItemReplySuccess _$$TonProofItemReplySuccessFromJson(
         Map<String, dynamic> json) =>
-    _$_TonProofItemReplySuccess(
+    _$TonProofItemReplySuccess(
       timestamp: json['timestamp'] as num,
       domain: ProofDomain.fromJson(json['domain'] as Map<String, dynamic>),
       payload: json['payload'] as String,
       signature: json['signature'] as String,
+      $type: json['runtimeType'] as String?,
     );
 
-Map<String, dynamic> _$$_TonProofItemReplySuccessToJson(
-        _$_TonProofItemReplySuccess instance) =>
+Map<String, dynamic> _$$TonProofItemReplySuccessToJson(
+        _$TonProofItemReplySuccess instance) =>
     <String, dynamic>{
       'timestamp': instance.timestamp,
       'domain': instance.domain,
       'payload': instance.payload,
       'signature': instance.signature,
+      'runtimeType': instance.$type,
     };
 
-_$_TonProofItemReplyError _$$_TonProofItemReplyErrorFromJson(
+_$TonProofItemReplyError _$$TonProofItemReplyErrorFromJson(
         Map<String, dynamic> json) =>
-    _$_TonProofItemReplyError(
+    _$TonProofItemReplyError(
       code: $enumDecode(_$CONNECT_ITEM_ERROR_CODESEnumMap, json['code']),
       message: json['message'] as String?,
+      $type: json['runtimeType'] as String?,
     );
 
-Map<String, dynamic> _$$_TonProofItemReplyErrorToJson(
-        _$_TonProofItemReplyError instance) =>
+Map<String, dynamic> _$$TonProofItemReplyErrorToJson(
+        _$TonProofItemReplyError instance) =>
     <String, dynamic>{
       'code': _$CONNECT_ITEM_ERROR_CODESEnumMap[instance.code]!,
       'message': instance.message,
+      'runtimeType': instance.$type,
     };
 
 const _$CONNECT_ITEM_ERROR_CODESEnumMap = {

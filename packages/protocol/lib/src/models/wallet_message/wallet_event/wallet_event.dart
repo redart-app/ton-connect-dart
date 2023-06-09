@@ -1,5 +1,4 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:tonconnect_protocol/src/models/wallet_message/wallet_event/wallet_event_payload.dart';
 import 'package:tonconnect_protocol/src/models/wallet_message/wallet_message.dart';
 
 part 'wallet_event.freezed.dart';

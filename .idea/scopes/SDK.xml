@@ -1,0 +1,3 @@
+<component name="DependencyValidationManager">
+  <scope name="SDK" pattern="file[melos_tonconnect_sdk]:*/" />
+</component>

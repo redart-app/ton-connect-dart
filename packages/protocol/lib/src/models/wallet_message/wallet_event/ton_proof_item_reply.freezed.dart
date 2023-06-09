@@ -14,107 +14,105 @@ T _$identity<T>(T value) => value;
 final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
-TonProofItemReplySuccess _$TonProofItemReplySuccessFromJson(
-    Map<String, dynamic> json) {
-  return _TonProofItemReplySuccess.fromJson(json);
+TonProofItemReply _$TonProofItemReplyFromJson(Map<String, dynamic> json) {
+  switch (json['runtimeType']) {
+    case 'success':
+      return TonProofItemReplySuccess.fromJson(json);
+    case 'error':
+      return TonProofItemReplyError.fromJson(json);
+
+    default:
+      throw CheckedFromJsonException(json, 'runtimeType', 'TonProofItemReply',
+          'Invalid union type "${json['runtimeType']}"!');
+  }
 }
 
 /// @nodoc
-mixin _$TonProofItemReplySuccess {
-  num get timestamp => throw _privateConstructorUsedError;
-  ProofDomain get domain => throw _privateConstructorUsedError;
-  String get payload => throw _privateConstructorUsedError;
-  String get signature => throw _privateConstructorUsedError;
-
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
-  $TonProofItemReplySuccessCopyWith<TonProofItemReplySuccess> get copyWith =>
+mixin _$TonProofItemReply {
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(
+            num timestamp, ProofDomain domain, String payload, String signature)
+        success,
+    required TResult Function(CONNECT_ITEM_ERROR_CODES code, String? message)
+        error,
+  }) =>
       throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(num timestamp, ProofDomain domain, String payload,
+            String signature)?
+        success,
+    TResult? Function(CONNECT_ITEM_ERROR_CODES code, String? message)? error,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(num timestamp, ProofDomain domain, String payload,
+            String signature)?
+        success,
+    TResult Function(CONNECT_ITEM_ERROR_CODES code, String? message)? error,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(TonProofItemReplySuccess value) success,
+    required TResult Function(TonProofItemReplyError value) error,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(TonProofItemReplySuccess value)? success,
+    TResult? Function(TonProofItemReplyError value)? error,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(TonProofItemReplySuccess value)? success,
+    TResult Function(TonProofItemReplyError value)? error,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $TonProofItemReplySuccessCopyWith<$Res> {
-  factory $TonProofItemReplySuccessCopyWith(TonProofItemReplySuccess value,
-          $Res Function(TonProofItemReplySuccess) then) =
-      _$TonProofItemReplySuccessCopyWithImpl<$Res, TonProofItemReplySuccess>;
-  @useResult
-  $Res call(
-      {num timestamp, ProofDomain domain, String payload, String signature});
-
-  $ProofDomainCopyWith<$Res> get domain;
+abstract class $TonProofItemReplyCopyWith<$Res> {
+  factory $TonProofItemReplyCopyWith(
+          TonProofItemReply value, $Res Function(TonProofItemReply) then) =
+      _$TonProofItemReplyCopyWithImpl<$Res, TonProofItemReply>;
 }
 
 /// @nodoc
-class _$TonProofItemReplySuccessCopyWithImpl<$Res,
-        $Val extends TonProofItemReplySuccess>
-    implements $TonProofItemReplySuccessCopyWith<$Res> {
-  _$TonProofItemReplySuccessCopyWithImpl(this._value, this._then);
+class _$TonProofItemReplyCopyWithImpl<$Res, $Val extends TonProofItemReply>
+    implements $TonProofItemReplyCopyWith<$Res> {
+  _$TonProofItemReplyCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
   // ignore: unused_field
   final $Res Function($Val) _then;
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? timestamp = null,
-    Object? domain = null,
-    Object? payload = null,
-    Object? signature = null,
-  }) {
-    return _then(_value.copyWith(
-      timestamp: null == timestamp
-          ? _value.timestamp
-          : timestamp // ignore: cast_nullable_to_non_nullable
-              as num,
-      domain: null == domain
-          ? _value.domain
-          : domain // ignore: cast_nullable_to_non_nullable
-              as ProofDomain,
-      payload: null == payload
-          ? _value.payload
-          : payload // ignore: cast_nullable_to_non_nullable
-              as String,
-      signature: null == signature
-          ? _value.signature
-          : signature // ignore: cast_nullable_to_non_nullable
-              as String,
-    ) as $Val);
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $ProofDomainCopyWith<$Res> get domain {
-    return $ProofDomainCopyWith<$Res>(_value.domain, (value) {
-      return _then(_value.copyWith(domain: value) as $Val);
-    });
-  }
 }
 
 /// @nodoc
-abstract class _$$_TonProofItemReplySuccessCopyWith<$Res>
-    implements $TonProofItemReplySuccessCopyWith<$Res> {
-  factory _$$_TonProofItemReplySuccessCopyWith(
-          _$_TonProofItemReplySuccess value,
-          $Res Function(_$_TonProofItemReplySuccess) then) =
-      __$$_TonProofItemReplySuccessCopyWithImpl<$Res>;
-  @override
+abstract class _$$TonProofItemReplySuccessCopyWith<$Res> {
+  factory _$$TonProofItemReplySuccessCopyWith(_$TonProofItemReplySuccess value,
+          $Res Function(_$TonProofItemReplySuccess) then) =
+      __$$TonProofItemReplySuccessCopyWithImpl<$Res>;
   @useResult
   $Res call(
       {num timestamp, ProofDomain domain, String payload, String signature});
 
-  @override
   $ProofDomainCopyWith<$Res> get domain;
 }
 
 /// @nodoc
-class __$$_TonProofItemReplySuccessCopyWithImpl<$Res>
-    extends _$TonProofItemReplySuccessCopyWithImpl<$Res,
-        _$_TonProofItemReplySuccess>
-    implements _$$_TonProofItemReplySuccessCopyWith<$Res> {
-  __$$_TonProofItemReplySuccessCopyWithImpl(_$_TonProofItemReplySuccess _value,
-      $Res Function(_$_TonProofItemReplySuccess) _then)
+class __$$TonProofItemReplySuccessCopyWithImpl<$Res>
+    extends _$TonProofItemReplyCopyWithImpl<$Res, _$TonProofItemReplySuccess>
+    implements _$$TonProofItemReplySuccessCopyWith<$Res> {
+  __$$TonProofItemReplySuccessCopyWithImpl(_$TonProofItemReplySuccess _value,
+      $Res Function(_$TonProofItemReplySuccess) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -125,7 +123,7 @@ class __$$_TonProofItemReplySuccessCopyWithImpl<$Res>
     Object? payload = null,
     Object? signature = null,
   }) {
-    return _then(_$_TonProofItemReplySuccess(
+    return _then(_$TonProofItemReplySuccess(
       timestamp: null == timestamp
           ? _value.timestamp
           : timestamp // ignore: cast_nullable_to_non_nullable
@@ -144,19 +142,29 @@ class __$$_TonProofItemReplySuccessCopyWithImpl<$Res>
               as String,
     ));
   }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $ProofDomainCopyWith<$Res> get domain {
+    return $ProofDomainCopyWith<$Res>(_value.domain, (value) {
+      return _then(_value.copyWith(domain: value));
+    });
+  }
 }
 
 /// @nodoc
 @JsonSerializable()
-class _$_TonProofItemReplySuccess implements _TonProofItemReplySuccess {
-  const _$_TonProofItemReplySuccess(
+class _$TonProofItemReplySuccess implements TonProofItemReplySuccess {
+  const _$TonProofItemReplySuccess(
       {required this.timestamp,
       required this.domain,
       required this.payload,
-      required this.signature});
+      required this.signature,
+      final String? $type})
+      : $type = $type ?? 'success';
 
-  factory _$_TonProofItemReplySuccess.fromJson(Map<String, dynamic> json) =>
-      _$$_TonProofItemReplySuccessFromJson(json);
+  factory _$TonProofItemReplySuccess.fromJson(Map<String, dynamic> json) =>
+      _$$TonProofItemReplySuccessFromJson(json);
 
   @override
   final num timestamp;
@@ -167,16 +175,19 @@ class _$_TonProofItemReplySuccess implements _TonProofItemReplySuccess {
   @override
   final String signature;
 
+  @JsonKey(name: 'runtimeType')
+  final String $type;
+
   @override
   String toString() {
-    return 'TonProofItemReplySuccess(timestamp: $timestamp, domain: $domain, payload: $payload, signature: $signature)';
+    return 'TonProofItemReply.success(timestamp: $timestamp, domain: $domain, payload: $payload, signature: $signature)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_TonProofItemReplySuccess &&
+            other is _$TonProofItemReplySuccess &&
             (identical(other.timestamp, timestamp) ||
                 other.timestamp == timestamp) &&
             (identical(other.domain, domain) || other.domain == domain) &&
@@ -193,115 +204,122 @@ class _$_TonProofItemReplySuccess implements _TonProofItemReplySuccess {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_TonProofItemReplySuccessCopyWith<_$_TonProofItemReplySuccess>
-      get copyWith => __$$_TonProofItemReplySuccessCopyWithImpl<
-          _$_TonProofItemReplySuccess>(this, _$identity);
+  _$$TonProofItemReplySuccessCopyWith<_$TonProofItemReplySuccess>
+      get copyWith =>
+          __$$TonProofItemReplySuccessCopyWithImpl<_$TonProofItemReplySuccess>(
+              this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(
+            num timestamp, ProofDomain domain, String payload, String signature)
+        success,
+    required TResult Function(CONNECT_ITEM_ERROR_CODES code, String? message)
+        error,
+  }) {
+    return success(timestamp, domain, payload, signature);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(num timestamp, ProofDomain domain, String payload,
+            String signature)?
+        success,
+    TResult? Function(CONNECT_ITEM_ERROR_CODES code, String? message)? error,
+  }) {
+    return success?.call(timestamp, domain, payload, signature);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(num timestamp, ProofDomain domain, String payload,
+            String signature)?
+        success,
+    TResult Function(CONNECT_ITEM_ERROR_CODES code, String? message)? error,
+    required TResult orElse(),
+  }) {
+    if (success != null) {
+      return success(timestamp, domain, payload, signature);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(TonProofItemReplySuccess value) success,
+    required TResult Function(TonProofItemReplyError value) error,
+  }) {
+    return success(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(TonProofItemReplySuccess value)? success,
+    TResult? Function(TonProofItemReplyError value)? error,
+  }) {
+    return success?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(TonProofItemReplySuccess value)? success,
+    TResult Function(TonProofItemReplyError value)? error,
+    required TResult orElse(),
+  }) {
+    if (success != null) {
+      return success(this);
+    }
+    return orElse();
+  }
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_TonProofItemReplySuccessToJson(
+    return _$$TonProofItemReplySuccessToJson(
       this,
     );
   }
 }
 
-abstract class _TonProofItemReplySuccess implements TonProofItemReplySuccess {
-  const factory _TonProofItemReplySuccess(
+abstract class TonProofItemReplySuccess implements TonProofItemReply {
+  const factory TonProofItemReplySuccess(
       {required final num timestamp,
       required final ProofDomain domain,
       required final String payload,
-      required final String signature}) = _$_TonProofItemReplySuccess;
+      required final String signature}) = _$TonProofItemReplySuccess;
 
-  factory _TonProofItemReplySuccess.fromJson(Map<String, dynamic> json) =
-      _$_TonProofItemReplySuccess.fromJson;
+  factory TonProofItemReplySuccess.fromJson(Map<String, dynamic> json) =
+      _$TonProofItemReplySuccess.fromJson;
 
-  @override
   num get timestamp;
-  @override
   ProofDomain get domain;
-  @override
   String get payload;
-  @override
   String get signature;
-  @override
   @JsonKey(ignore: true)
-  _$$_TonProofItemReplySuccessCopyWith<_$_TonProofItemReplySuccess>
+  _$$TonProofItemReplySuccessCopyWith<_$TonProofItemReplySuccess>
       get copyWith => throw _privateConstructorUsedError;
 }
 
-TonProofItemReplyError _$TonProofItemReplyErrorFromJson(
-    Map<String, dynamic> json) {
-  return _TonProofItemReplyError.fromJson(json);
-}
-
 /// @nodoc
-mixin _$TonProofItemReplyError {
-  CONNECT_ITEM_ERROR_CODES get code => throw _privateConstructorUsedError;
-  String? get message => throw _privateConstructorUsedError;
-
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
-  $TonProofItemReplyErrorCopyWith<TonProofItemReplyError> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $TonProofItemReplyErrorCopyWith<$Res> {
-  factory $TonProofItemReplyErrorCopyWith(TonProofItemReplyError value,
-          $Res Function(TonProofItemReplyError) then) =
-      _$TonProofItemReplyErrorCopyWithImpl<$Res, TonProofItemReplyError>;
+abstract class _$$TonProofItemReplyErrorCopyWith<$Res> {
+  factory _$$TonProofItemReplyErrorCopyWith(_$TonProofItemReplyError value,
+          $Res Function(_$TonProofItemReplyError) then) =
+      __$$TonProofItemReplyErrorCopyWithImpl<$Res>;
   @useResult
   $Res call({CONNECT_ITEM_ERROR_CODES code, String? message});
 }
 
 /// @nodoc
-class _$TonProofItemReplyErrorCopyWithImpl<$Res,
-        $Val extends TonProofItemReplyError>
-    implements $TonProofItemReplyErrorCopyWith<$Res> {
-  _$TonProofItemReplyErrorCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? code = null,
-    Object? message = freezed,
-  }) {
-    return _then(_value.copyWith(
-      code: null == code
-          ? _value.code
-          : code // ignore: cast_nullable_to_non_nullable
-              as CONNECT_ITEM_ERROR_CODES,
-      message: freezed == message
-          ? _value.message
-          : message // ignore: cast_nullable_to_non_nullable
-              as String?,
-    ) as $Val);
-  }
-}
-
-/// @nodoc
-abstract class _$$_TonProofItemReplyErrorCopyWith<$Res>
-    implements $TonProofItemReplyErrorCopyWith<$Res> {
-  factory _$$_TonProofItemReplyErrorCopyWith(_$_TonProofItemReplyError value,
-          $Res Function(_$_TonProofItemReplyError) then) =
-      __$$_TonProofItemReplyErrorCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call({CONNECT_ITEM_ERROR_CODES code, String? message});
-}
-
-/// @nodoc
-class __$$_TonProofItemReplyErrorCopyWithImpl<$Res>
-    extends _$TonProofItemReplyErrorCopyWithImpl<$Res,
-        _$_TonProofItemReplyError>
-    implements _$$_TonProofItemReplyErrorCopyWith<$Res> {
-  __$$_TonProofItemReplyErrorCopyWithImpl(_$_TonProofItemReplyError _value,
-      $Res Function(_$_TonProofItemReplyError) _then)
+class __$$TonProofItemReplyErrorCopyWithImpl<$Res>
+    extends _$TonProofItemReplyCopyWithImpl<$Res, _$TonProofItemReplyError>
+    implements _$$TonProofItemReplyErrorCopyWith<$Res> {
+  __$$TonProofItemReplyErrorCopyWithImpl(_$TonProofItemReplyError _value,
+      $Res Function(_$TonProofItemReplyError) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -310,7 +328,7 @@ class __$$_TonProofItemReplyErrorCopyWithImpl<$Res>
     Object? code = null,
     Object? message = freezed,
   }) {
-    return _then(_$_TonProofItemReplyError(
+    return _then(_$TonProofItemReplyError(
       code: null == code
           ? _value.code
           : code // ignore: cast_nullable_to_non_nullable
@@ -325,27 +343,32 @@ class __$$_TonProofItemReplyErrorCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_TonProofItemReplyError implements _TonProofItemReplyError {
-  const _$_TonProofItemReplyError({required this.code, this.message});
+class _$TonProofItemReplyError implements TonProofItemReplyError {
+  const _$TonProofItemReplyError(
+      {required this.code, this.message, final String? $type})
+      : $type = $type ?? 'error';
 
-  factory _$_TonProofItemReplyError.fromJson(Map<String, dynamic> json) =>
-      _$$_TonProofItemReplyErrorFromJson(json);
+  factory _$TonProofItemReplyError.fromJson(Map<String, dynamic> json) =>
+      _$$TonProofItemReplyErrorFromJson(json);
 
   @override
   final CONNECT_ITEM_ERROR_CODES code;
   @override
   final String? message;
 
+  @JsonKey(name: 'runtimeType')
+  final String $type;
+
   @override
   String toString() {
-    return 'TonProofItemReplyError(code: $code, message: $message)';
+    return 'TonProofItemReply.error(code: $code, message: $message)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_TonProofItemReplyError &&
+            other is _$TonProofItemReplyError &&
             (identical(other.code, code) || other.code == code) &&
             (identical(other.message, message) || other.message == message));
   }
@@ -357,33 +380,99 @@ class _$_TonProofItemReplyError implements _TonProofItemReplyError {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_TonProofItemReplyErrorCopyWith<_$_TonProofItemReplyError> get copyWith =>
-      __$$_TonProofItemReplyErrorCopyWithImpl<_$_TonProofItemReplyError>(
+  _$$TonProofItemReplyErrorCopyWith<_$TonProofItemReplyError> get copyWith =>
+      __$$TonProofItemReplyErrorCopyWithImpl<_$TonProofItemReplyError>(
           this, _$identity);
 
   @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(
+            num timestamp, ProofDomain domain, String payload, String signature)
+        success,
+    required TResult Function(CONNECT_ITEM_ERROR_CODES code, String? message)
+        error,
+  }) {
+    return error(code, message);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(num timestamp, ProofDomain domain, String payload,
+            String signature)?
+        success,
+    TResult? Function(CONNECT_ITEM_ERROR_CODES code, String? message)? error,
+  }) {
+    return error?.call(code, message);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(num timestamp, ProofDomain domain, String payload,
+            String signature)?
+        success,
+    TResult Function(CONNECT_ITEM_ERROR_CODES code, String? message)? error,
+    required TResult orElse(),
+  }) {
+    if (error != null) {
+      return error(code, message);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(TonProofItemReplySuccess value) success,
+    required TResult Function(TonProofItemReplyError value) error,
+  }) {
+    return error(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(TonProofItemReplySuccess value)? success,
+    TResult? Function(TonProofItemReplyError value)? error,
+  }) {
+    return error?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(TonProofItemReplySuccess value)? success,
+    TResult Function(TonProofItemReplyError value)? error,
+    required TResult orElse(),
+  }) {
+    if (error != null) {
+      return error(this);
+    }
+    return orElse();
+  }
+
+  @override
   Map<String, dynamic> toJson() {
-    return _$$_TonProofItemReplyErrorToJson(
+    return _$$TonProofItemReplyErrorToJson(
       this,
     );
   }
 }
 
-abstract class _TonProofItemReplyError implements TonProofItemReplyError {
-  const factory _TonProofItemReplyError(
+abstract class TonProofItemReplyError implements TonProofItemReply {
+  const factory TonProofItemReplyError(
       {required final CONNECT_ITEM_ERROR_CODES code,
-      final String? message}) = _$_TonProofItemReplyError;
+      final String? message}) = _$TonProofItemReplyError;
 
-  factory _TonProofItemReplyError.fromJson(Map<String, dynamic> json) =
-      _$_TonProofItemReplyError.fromJson;
+  factory TonProofItemReplyError.fromJson(Map<String, dynamic> json) =
+      _$TonProofItemReplyError.fromJson;
 
-  @override
   CONNECT_ITEM_ERROR_CODES get code;
-  @override
   String? get message;
-  @override
   @JsonKey(ignore: true)
-  _$$_TonProofItemReplyErrorCopyWith<_$_TonProofItemReplyError> get copyWith =>
+  _$$TonProofItemReplyErrorCopyWith<_$TonProofItemReplyError> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
