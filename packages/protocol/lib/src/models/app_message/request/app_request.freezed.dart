@@ -32,11 +32,12 @@ AppRequest _$AppRequestFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$AppRequest {
   RpcMethod get method => throw _privateConstructorUsedError;
-  String get id => throw _privateConstructorUsedError;
+  String? get id => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(RpcMethod method, String id) signData,
-    required TResult Function(RpcMethod method, String id, List<String> params)
+    required TResult Function(
+            String? id, RpcMethod method, Map<String, dynamic> params)
         sendTransaction,
     required TResult Function(RpcMethod method, String id, List<dynamic> params)
         disconnect,
@@ -45,7 +46,8 @@ mixin _$AppRequest {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(RpcMethod method, String id)? signData,
-    TResult? Function(RpcMethod method, String id, List<String> params)?
+    TResult? Function(
+            String? id, RpcMethod method, Map<String, dynamic> params)?
         sendTransaction,
     TResult? Function(RpcMethod method, String id, List<dynamic> params)?
         disconnect,
@@ -54,7 +56,7 @@ mixin _$AppRequest {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(RpcMethod method, String id)? signData,
-    TResult Function(RpcMethod method, String id, List<String> params)?
+    TResult Function(String? id, RpcMethod method, Map<String, dynamic> params)?
         sendTransaction,
     TResult Function(RpcMethod method, String id, List<dynamic> params)?
         disconnect,
@@ -120,7 +122,7 @@ class _$AppRequestCopyWithImpl<$Res, $Val extends AppRequest>
           : method // ignore: cast_nullable_to_non_nullable
               as RpcMethod,
       id: null == id
-          ? _value.id
+          ? _value.id!
           : id // ignore: cast_nullable_to_non_nullable
               as String,
     ) as $Val);
@@ -205,7 +207,8 @@ class _$_SignData implements _SignData {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(RpcMethod method, String id) signData,
-    required TResult Function(RpcMethod method, String id, List<String> params)
+    required TResult Function(
+            String? id, RpcMethod method, Map<String, dynamic> params)
         sendTransaction,
     required TResult Function(RpcMethod method, String id, List<dynamic> params)
         disconnect,
@@ -217,7 +220,8 @@ class _$_SignData implements _SignData {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(RpcMethod method, String id)? signData,
-    TResult? Function(RpcMethod method, String id, List<String> params)?
+    TResult? Function(
+            String? id, RpcMethod method, Map<String, dynamic> params)?
         sendTransaction,
     TResult? Function(RpcMethod method, String id, List<dynamic> params)?
         disconnect,
@@ -229,7 +233,7 @@ class _$_SignData implements _SignData {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(RpcMethod method, String id)? signData,
-    TResult Function(RpcMethod method, String id, List<String> params)?
+    TResult Function(String? id, RpcMethod method, Map<String, dynamic> params)?
         sendTransaction,
     TResult Function(RpcMethod method, String id, List<dynamic> params)?
         disconnect,
@@ -308,7 +312,7 @@ abstract class _$$_SendTransactionCopyWith<$Res>
       __$$_SendTransactionCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({RpcMethod method, String id, List<String> params});
+  $Res call({String? id, RpcMethod method, Map<String, dynamic> params});
 }
 
 /// @nodoc
@@ -322,23 +326,23 @@ class __$$_SendTransactionCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
+    Object? id = freezed,
     Object? method = null,
-    Object? id = null,
     Object? params = null,
   }) {
     return _then(_$_SendTransaction(
+      id: freezed == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String?,
       method: null == method
           ? _value.method
           : method // ignore: cast_nullable_to_non_nullable
               as RpcMethod,
-      id: null == id
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as String,
       params: null == params
           ? _value._params
           : params // ignore: cast_nullable_to_non_nullable
-              as List<String>,
+              as Map<String, dynamic>,
     ));
   }
 }
@@ -347,29 +351,29 @@ class __$$_SendTransactionCopyWithImpl<$Res>
 @JsonSerializable()
 class _$_SendTransaction implements _SendTransaction {
   const _$_SendTransaction(
-      {required this.method,
-      required this.id,
-      required final List<String> params})
+      {this.id,
+      required this.method,
+      required final Map<String, dynamic> params})
       : _params = params;
 
   factory _$_SendTransaction.fromJson(Map<String, dynamic> json) =>
       _$$_SendTransactionFromJson(json);
 
   @override
+  final String? id;
+  @override
   final RpcMethod method;
+  final Map<String, dynamic> _params;
   @override
-  final String id;
-  final List<String> _params;
-  @override
-  List<String> get params {
-    if (_params is EqualUnmodifiableListView) return _params;
+  Map<String, dynamic> get params {
+    if (_params is EqualUnmodifiableMapView) return _params;
     // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_params);
+    return EqualUnmodifiableMapView(_params);
   }
 
   @override
   String toString() {
-    return 'AppRequest.sendTransaction(method: $method, id: $id, params: $params)';
+    return 'AppRequest.sendTransaction(id: $id, method: $method, params: $params)';
   }
 
   @override
@@ -377,15 +381,15 @@ class _$_SendTransaction implements _SendTransaction {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_SendTransaction &&
-            (identical(other.method, method) || other.method == method) &&
             (identical(other.id, id) || other.id == id) &&
+            (identical(other.method, method) || other.method == method) &&
             const DeepCollectionEquality().equals(other._params, _params));
   }
 
   @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(
-      runtimeType, method, id, const DeepCollectionEquality().hash(_params));
+      runtimeType, id, method, const DeepCollectionEquality().hash(_params));
 
   @JsonKey(ignore: true)
   @override
@@ -397,38 +401,40 @@ class _$_SendTransaction implements _SendTransaction {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(RpcMethod method, String id) signData,
-    required TResult Function(RpcMethod method, String id, List<String> params)
+    required TResult Function(
+            String? id, RpcMethod method, Map<String, dynamic> params)
         sendTransaction,
     required TResult Function(RpcMethod method, String id, List<dynamic> params)
         disconnect,
   }) {
-    return sendTransaction(method, id, params);
+    return sendTransaction(id, method, params);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(RpcMethod method, String id)? signData,
-    TResult? Function(RpcMethod method, String id, List<String> params)?
+    TResult? Function(
+            String? id, RpcMethod method, Map<String, dynamic> params)?
         sendTransaction,
     TResult? Function(RpcMethod method, String id, List<dynamic> params)?
         disconnect,
   }) {
-    return sendTransaction?.call(method, id, params);
+    return sendTransaction?.call(id, method, params);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(RpcMethod method, String id)? signData,
-    TResult Function(RpcMethod method, String id, List<String> params)?
+    TResult Function(String? id, RpcMethod method, Map<String, dynamic> params)?
         sendTransaction,
     TResult Function(RpcMethod method, String id, List<dynamic> params)?
         disconnect,
     required TResult orElse(),
   }) {
     if (sendTransaction != null) {
-      return sendTransaction(method, id, params);
+      return sendTransaction(id, method, params);
     }
     return orElse();
   }
@@ -477,18 +483,18 @@ class _$_SendTransaction implements _SendTransaction {
 
 abstract class _SendTransaction implements AppRequest {
   const factory _SendTransaction(
-      {required final RpcMethod method,
-      required final String id,
-      required final List<String> params}) = _$_SendTransaction;
+      {final String? id,
+      required final RpcMethod method,
+      required final Map<String, dynamic> params}) = _$_SendTransaction;
 
   factory _SendTransaction.fromJson(Map<String, dynamic> json) =
       _$_SendTransaction.fromJson;
 
   @override
-  RpcMethod get method;
+  String? get id;
   @override
-  String get id;
-  List<String> get params;
+  RpcMethod get method;
+  Map<String, dynamic> get params;
   @override
   @JsonKey(ignore: true)
   _$$_SendTransactionCopyWith<_$_SendTransaction> get copyWith =>
@@ -592,7 +598,8 @@ class _$_Disconnect implements _Disconnect {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(RpcMethod method, String id) signData,
-    required TResult Function(RpcMethod method, String id, List<String> params)
+    required TResult Function(
+            String? id, RpcMethod method, Map<String, dynamic> params)
         sendTransaction,
     required TResult Function(RpcMethod method, String id, List<dynamic> params)
         disconnect,
@@ -604,7 +611,8 @@ class _$_Disconnect implements _Disconnect {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(RpcMethod method, String id)? signData,
-    TResult? Function(RpcMethod method, String id, List<String> params)?
+    TResult? Function(
+            String? id, RpcMethod method, Map<String, dynamic> params)?
         sendTransaction,
     TResult? Function(RpcMethod method, String id, List<dynamic> params)?
         disconnect,
@@ -616,7 +624,7 @@ class _$_Disconnect implements _Disconnect {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(RpcMethod method, String id)? signData,
-    TResult Function(RpcMethod method, String id, List<String> params)?
+    TResult Function(String? id, RpcMethod method, Map<String, dynamic> params)?
         sendTransaction,
     TResult Function(RpcMethod method, String id, List<dynamic> params)?
         disconnect,

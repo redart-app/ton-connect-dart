@@ -25,16 +25,15 @@ const _$RpcMethodEnumMap = {
 
 _$_SendTransaction _$$_SendTransactionFromJson(Map<String, dynamic> json) =>
     _$_SendTransaction(
+      id: json['id'] as String?,
       method: $enumDecode(_$RpcMethodEnumMap, json['method']),
-      id: json['id'] as String,
-      params:
-          (json['params'] as List<dynamic>).map((e) => e as String).toList(),
+      params: json['params'] as Map<String, dynamic>,
     );
 
 Map<String, dynamic> _$$_SendTransactionToJson(_$_SendTransaction instance) =>
     <String, dynamic>{
-      'method': _$RpcMethodEnumMap[instance.method]!,
       'id': instance.id,
+      'method': _$RpcMethodEnumMap[instance.method]!,
       'params': instance.params,
     };
 

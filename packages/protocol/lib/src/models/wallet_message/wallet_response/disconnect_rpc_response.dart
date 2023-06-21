@@ -12,7 +12,7 @@ class DisconnectRpcResponseSuccess extends WalletResponseSuccess
     with _$DisconnectRpcResponseSuccess
     implements DisconnectRpcResponse {
   const factory DisconnectRpcResponseSuccess({
-    required String id,
+    String? id,
     required Map<String, dynamic> result,
   }) = _DisconnectRpcResponseSuccess;
 
@@ -25,7 +25,7 @@ class DisconnectRpcResponseError extends WalletResponseError
     with _$DisconnectRpcResponseError
     implements DisconnectRpcResponse {
   const factory DisconnectRpcResponseError({
-    required String id,
+    String? id,
     required DisconnectRpcResponseErrorData error,
   }) = _DisconnectRpcResponseError;
 

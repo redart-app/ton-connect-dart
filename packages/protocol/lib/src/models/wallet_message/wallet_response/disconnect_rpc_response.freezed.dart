@@ -21,7 +21,7 @@ DisconnectRpcResponseSuccess _$DisconnectRpcResponseSuccessFromJson(
 
 /// @nodoc
 mixin _$DisconnectRpcResponseSuccess {
-  String get id => throw _privateConstructorUsedError;
+  String? get id => throw _privateConstructorUsedError;
   Map<String, dynamic> get result => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -38,7 +38,7 @@ abstract class $DisconnectRpcResponseSuccessCopyWith<$Res> {
       _$DisconnectRpcResponseSuccessCopyWithImpl<$Res,
           DisconnectRpcResponseSuccess>;
   @useResult
-  $Res call({String id, Map<String, dynamic> result});
+  $Res call({String? id, Map<String, dynamic> result});
 }
 
 /// @nodoc
@@ -55,14 +55,14 @@ class _$DisconnectRpcResponseSuccessCopyWithImpl<$Res,
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? id = null,
+    Object? id = freezed,
     Object? result = null,
   }) {
     return _then(_value.copyWith(
-      id: null == id
+      id: freezed == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       result: null == result
           ? _value.result
           : result // ignore: cast_nullable_to_non_nullable
@@ -80,7 +80,7 @@ abstract class _$$_DisconnectRpcResponseSuccessCopyWith<$Res>
       __$$_DisconnectRpcResponseSuccessCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({String id, Map<String, dynamic> result});
+  $Res call({String? id, Map<String, dynamic> result});
 }
 
 /// @nodoc
@@ -96,14 +96,14 @@ class __$$_DisconnectRpcResponseSuccessCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? id = null,
+    Object? id = freezed,
     Object? result = null,
   }) {
     return _then(_$_DisconnectRpcResponseSuccess(
-      id: null == id
+      id: freezed == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       result: null == result
           ? _value._result
           : result // ignore: cast_nullable_to_non_nullable
@@ -116,14 +116,14 @@ class __$$_DisconnectRpcResponseSuccessCopyWithImpl<$Res>
 @JsonSerializable()
 class _$_DisconnectRpcResponseSuccess implements _DisconnectRpcResponseSuccess {
   const _$_DisconnectRpcResponseSuccess(
-      {required this.id, required final Map<String, dynamic> result})
+      {this.id, required final Map<String, dynamic> result})
       : _result = result;
 
   factory _$_DisconnectRpcResponseSuccess.fromJson(Map<String, dynamic> json) =>
       _$$_DisconnectRpcResponseSuccessFromJson(json);
 
   @override
-  final String id;
+  final String? id;
   final Map<String, dynamic> _result;
   @override
   Map<String, dynamic> get result {
@@ -169,15 +169,14 @@ class _$_DisconnectRpcResponseSuccess implements _DisconnectRpcResponseSuccess {
 abstract class _DisconnectRpcResponseSuccess
     implements DisconnectRpcResponseSuccess {
   const factory _DisconnectRpcResponseSuccess(
-          {required final String id,
-          required final Map<String, dynamic> result}) =
+          {final String? id, required final Map<String, dynamic> result}) =
       _$_DisconnectRpcResponseSuccess;
 
   factory _DisconnectRpcResponseSuccess.fromJson(Map<String, dynamic> json) =
       _$_DisconnectRpcResponseSuccess.fromJson;
 
   @override
-  String get id;
+  String? get id;
   @override
   Map<String, dynamic> get result;
   @override
@@ -193,7 +192,7 @@ DisconnectRpcResponseError _$DisconnectRpcResponseErrorFromJson(
 
 /// @nodoc
 mixin _$DisconnectRpcResponseError {
-  String get id => throw _privateConstructorUsedError;
+  String? get id => throw _privateConstructorUsedError;
   DisconnectRpcResponseErrorData get error =>
       throw _privateConstructorUsedError;
 
@@ -210,7 +209,7 @@ abstract class $DisconnectRpcResponseErrorCopyWith<$Res> {
       _$DisconnectRpcResponseErrorCopyWithImpl<$Res,
           DisconnectRpcResponseError>;
   @useResult
-  $Res call({String id, DisconnectRpcResponseErrorData error});
+  $Res call({String? id, DisconnectRpcResponseErrorData error});
 
   $DisconnectRpcResponseErrorDataCopyWith<$Res> get error;
 }
@@ -229,14 +228,14 @@ class _$DisconnectRpcResponseErrorCopyWithImpl<$Res,
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? id = null,
+    Object? id = freezed,
     Object? error = null,
   }) {
     return _then(_value.copyWith(
-      id: null == id
+      id: freezed == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       error: null == error
           ? _value.error
           : error // ignore: cast_nullable_to_non_nullable
@@ -262,7 +261,7 @@ abstract class _$$_DisconnectRpcResponseErrorCopyWith<$Res>
       __$$_DisconnectRpcResponseErrorCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({String id, DisconnectRpcResponseErrorData error});
+  $Res call({String? id, DisconnectRpcResponseErrorData error});
 
   @override
   $DisconnectRpcResponseErrorDataCopyWith<$Res> get error;
@@ -281,14 +280,14 @@ class __$$_DisconnectRpcResponseErrorCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? id = null,
+    Object? id = freezed,
     Object? error = null,
   }) {
     return _then(_$_DisconnectRpcResponseError(
-      id: null == id
+      id: freezed == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       error: null == error
           ? _value.error
           : error // ignore: cast_nullable_to_non_nullable
@@ -300,13 +299,13 @@ class __$$_DisconnectRpcResponseErrorCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$_DisconnectRpcResponseError implements _DisconnectRpcResponseError {
-  const _$_DisconnectRpcResponseError({required this.id, required this.error});
+  const _$_DisconnectRpcResponseError({this.id, required this.error});
 
   factory _$_DisconnectRpcResponseError.fromJson(Map<String, dynamic> json) =>
       _$$_DisconnectRpcResponseErrorFromJson(json);
 
   @override
-  final String id;
+  final String? id;
   @override
   final DisconnectRpcResponseErrorData error;
 
@@ -346,7 +345,7 @@ class _$_DisconnectRpcResponseError implements _DisconnectRpcResponseError {
 abstract class _DisconnectRpcResponseError
     implements DisconnectRpcResponseError {
   const factory _DisconnectRpcResponseError(
-          {required final String id,
+          {final String? id,
           required final DisconnectRpcResponseErrorData error}) =
       _$_DisconnectRpcResponseError;
 
@@ -354,7 +353,7 @@ abstract class _DisconnectRpcResponseError
       _$_DisconnectRpcResponseError.fromJson;
 
   @override
-  String get id;
+  String? get id;
   @override
   DisconnectRpcResponseErrorData get error;
   @override

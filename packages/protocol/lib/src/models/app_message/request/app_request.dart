@@ -14,9 +14,9 @@ class AppRequest extends AppMessage with _$AppRequest {
   }) = _SignData;
 
   const factory AppRequest.sendTransaction({
+    String? id,
     required RpcMethod method,
-    required String id,
-    required List<String> params,
+    required Map<String, dynamic> params,
   }) = _SendTransaction;
 
   const factory AppRequest.disconnect({

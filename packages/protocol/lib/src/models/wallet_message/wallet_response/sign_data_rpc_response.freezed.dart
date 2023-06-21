@@ -21,7 +21,7 @@ SignDataRpcResponseSuccess _$SignDataRpcResponseSuccessFromJson(
 
 /// @nodoc
 mixin _$SignDataRpcResponseSuccess {
-  String get id => throw _privateConstructorUsedError;
+  String? get id => throw _privateConstructorUsedError;
   SignDataRpcResponseSuccessData get result =>
       throw _privateConstructorUsedError;
 
@@ -38,7 +38,7 @@ abstract class $SignDataRpcResponseSuccessCopyWith<$Res> {
       _$SignDataRpcResponseSuccessCopyWithImpl<$Res,
           SignDataRpcResponseSuccess>;
   @useResult
-  $Res call({String id, SignDataRpcResponseSuccessData result});
+  $Res call({String? id, SignDataRpcResponseSuccessData result});
 
   $SignDataRpcResponseSuccessDataCopyWith<$Res> get result;
 }
@@ -57,14 +57,14 @@ class _$SignDataRpcResponseSuccessCopyWithImpl<$Res,
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? id = null,
+    Object? id = freezed,
     Object? result = null,
   }) {
     return _then(_value.copyWith(
-      id: null == id
+      id: freezed == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       result: null == result
           ? _value.result
           : result // ignore: cast_nullable_to_non_nullable
@@ -91,7 +91,7 @@ abstract class _$$_SignDataRpcResponseSuccessCopyWith<$Res>
       __$$_SignDataRpcResponseSuccessCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({String id, SignDataRpcResponseSuccessData result});
+  $Res call({String? id, SignDataRpcResponseSuccessData result});
 
   @override
   $SignDataRpcResponseSuccessDataCopyWith<$Res> get result;
@@ -110,14 +110,14 @@ class __$$_SignDataRpcResponseSuccessCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? id = null,
+    Object? id = freezed,
     Object? result = null,
   }) {
     return _then(_$_SignDataRpcResponseSuccess(
-      id: null == id
+      id: freezed == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       result: null == result
           ? _value.result
           : result // ignore: cast_nullable_to_non_nullable
@@ -129,13 +129,13 @@ class __$$_SignDataRpcResponseSuccessCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$_SignDataRpcResponseSuccess implements _SignDataRpcResponseSuccess {
-  const _$_SignDataRpcResponseSuccess({required this.id, required this.result});
+  const _$_SignDataRpcResponseSuccess({this.id, required this.result});
 
   factory _$_SignDataRpcResponseSuccess.fromJson(Map<String, dynamic> json) =>
       _$$_SignDataRpcResponseSuccessFromJson(json);
 
   @override
-  final String id;
+  final String? id;
   @override
   final SignDataRpcResponseSuccessData result;
 
@@ -175,7 +175,7 @@ class _$_SignDataRpcResponseSuccess implements _SignDataRpcResponseSuccess {
 abstract class _SignDataRpcResponseSuccess
     implements SignDataRpcResponseSuccess {
   const factory _SignDataRpcResponseSuccess(
-          {required final String id,
+          {final String? id,
           required final SignDataRpcResponseSuccessData result}) =
       _$_SignDataRpcResponseSuccess;
 
@@ -183,7 +183,7 @@ abstract class _SignDataRpcResponseSuccess
       _$_SignDataRpcResponseSuccess.fromJson;
 
   @override
-  String get id;
+  String? get id;
   @override
   SignDataRpcResponseSuccessData get result;
   @override
@@ -367,7 +367,7 @@ SignDataRpcResponseError _$SignDataRpcResponseErrorFromJson(
 
 /// @nodoc
 mixin _$SignDataRpcResponseError {
-  String get id => throw _privateConstructorUsedError;
+  String? get id => throw _privateConstructorUsedError;
   SignDataRpcResponseErrorData get error => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -382,7 +382,7 @@ abstract class $SignDataRpcResponseErrorCopyWith<$Res> {
           $Res Function(SignDataRpcResponseError) then) =
       _$SignDataRpcResponseErrorCopyWithImpl<$Res, SignDataRpcResponseError>;
   @useResult
-  $Res call({String id, SignDataRpcResponseErrorData error});
+  $Res call({String? id, SignDataRpcResponseErrorData error});
 
   $SignDataRpcResponseErrorDataCopyWith<$Res> get error;
 }
@@ -401,14 +401,14 @@ class _$SignDataRpcResponseErrorCopyWithImpl<$Res,
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? id = null,
+    Object? id = freezed,
     Object? error = null,
   }) {
     return _then(_value.copyWith(
-      id: null == id
+      id: freezed == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       error: null == error
           ? _value.error
           : error // ignore: cast_nullable_to_non_nullable
@@ -434,7 +434,7 @@ abstract class _$$_SignDataRpcResponseErrorCopyWith<$Res>
       __$$_SignDataRpcResponseErrorCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({String id, SignDataRpcResponseErrorData error});
+  $Res call({String? id, SignDataRpcResponseErrorData error});
 
   @override
   $SignDataRpcResponseErrorDataCopyWith<$Res> get error;
@@ -452,14 +452,14 @@ class __$$_SignDataRpcResponseErrorCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? id = null,
+    Object? id = freezed,
     Object? error = null,
   }) {
     return _then(_$_SignDataRpcResponseError(
-      id: null == id
+      id: freezed == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       error: null == error
           ? _value.error
           : error // ignore: cast_nullable_to_non_nullable
@@ -471,13 +471,13 @@ class __$$_SignDataRpcResponseErrorCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$_SignDataRpcResponseError implements _SignDataRpcResponseError {
-  const _$_SignDataRpcResponseError({required this.id, required this.error});
+  const _$_SignDataRpcResponseError({this.id, required this.error});
 
   factory _$_SignDataRpcResponseError.fromJson(Map<String, dynamic> json) =>
       _$$_SignDataRpcResponseErrorFromJson(json);
 
   @override
-  final String id;
+  final String? id;
   @override
   final SignDataRpcResponseErrorData error;
 
@@ -516,7 +516,7 @@ class _$_SignDataRpcResponseError implements _SignDataRpcResponseError {
 
 abstract class _SignDataRpcResponseError implements SignDataRpcResponseError {
   const factory _SignDataRpcResponseError(
-          {required final String id,
+          {final String? id,
           required final SignDataRpcResponseErrorData error}) =
       _$_SignDataRpcResponseError;
 
@@ -524,7 +524,7 @@ abstract class _SignDataRpcResponseError implements SignDataRpcResponseError {
       _$_SignDataRpcResponseError.fromJson;
 
   @override
-  String get id;
+  String? get id;
   @override
   SignDataRpcResponseErrorData get error;
   @override

@@ -9,7 +9,7 @@ part of 'sign_data_rpc_response.dart';
 _$_SignDataRpcResponseSuccess _$$_SignDataRpcResponseSuccessFromJson(
         Map<String, dynamic> json) =>
     _$_SignDataRpcResponseSuccess(
-      id: json['id'] as String,
+      id: json['id'] as String?,
       result: SignDataRpcResponseSuccessData.fromJson(
           json['result'] as Map<String, dynamic>),
     );
@@ -38,7 +38,7 @@ Map<String, dynamic> _$$_SignDataRpcResponseSuccessDataToJson(
 _$_SignDataRpcResponseError _$$_SignDataRpcResponseErrorFromJson(
         Map<String, dynamic> json) =>
     _$_SignDataRpcResponseError(
-      id: json['id'] as String,
+      id: json['id'] as String?,
       error: SignDataRpcResponseErrorData.fromJson(
           json['error'] as Map<String, dynamic>),
     );

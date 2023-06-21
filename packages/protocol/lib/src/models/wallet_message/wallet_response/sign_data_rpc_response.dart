@@ -12,7 +12,7 @@ class SignDataRpcResponseSuccess extends WalletResponseSuccess
     with _$SignDataRpcResponseSuccess
     implements SignDataRpcResponse {
   const factory SignDataRpcResponseSuccess({
-    required String id,
+    String? id,
     required SignDataRpcResponseSuccessData result,
   }) = _SignDataRpcResponseSuccess;
 
@@ -36,7 +36,7 @@ class SignDataRpcResponseError extends WalletResponseError
     with _$SignDataRpcResponseError
     implements SignDataRpcResponse {
   const factory SignDataRpcResponseError({
-    required String id,
+    String? id,
     required SignDataRpcResponseErrorData error,
   }) = _SignDataRpcResponseError;
 

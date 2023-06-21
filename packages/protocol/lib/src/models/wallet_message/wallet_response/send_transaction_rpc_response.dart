@@ -11,7 +11,7 @@ abstract class SendTransactionRpcResponse {}
 class SendTransactionRpcResponseSuccess extends WalletResponseSuccess
     with _$SendTransactionRpcResponseSuccess
     implements SendTransactionRpcResponse {
-  const factory SendTransactionRpcResponseSuccess() =
+  const factory SendTransactionRpcResponseSuccess(String result) =
       _SendTransactionRpcResponseSuccess;
 }
 
@@ -20,7 +20,7 @@ class SendTransactionRpcResponseError extends WalletResponseError
     with _$SendTransactionRpcResponseError
     implements SendTransactionRpcResponse {
   const factory SendTransactionRpcResponseError({
-    required String id,
+    String? id,
     required SendTransactionRpcResponseErrorData error,
   }) = _SendTransactionRpcResponseError;
 

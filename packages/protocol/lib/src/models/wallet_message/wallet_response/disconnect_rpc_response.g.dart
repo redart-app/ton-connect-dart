@@ -9,7 +9,7 @@ part of 'disconnect_rpc_response.dart';
 _$_DisconnectRpcResponseSuccess _$$_DisconnectRpcResponseSuccessFromJson(
         Map<String, dynamic> json) =>
     _$_DisconnectRpcResponseSuccess(
-      id: json['id'] as String,
+      id: json['id'] as String?,
       result: json['result'] as Map<String, dynamic>,
     );
 
@@ -23,7 +23,7 @@ Map<String, dynamic> _$$_DisconnectRpcResponseSuccessToJson(
 _$_DisconnectRpcResponseError _$$_DisconnectRpcResponseErrorFromJson(
         Map<String, dynamic> json) =>
     _$_DisconnectRpcResponseError(
-      id: json['id'] as String,
+      id: json['id'] as String?,
       error: DisconnectRpcResponseErrorData.fromJson(
           json['error'] as Map<String, dynamic>),
     );

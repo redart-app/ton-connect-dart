@@ -9,7 +9,7 @@ part of 'send_transaction_rpc_response.dart';
 _$_SendTransactionRpcResponseError _$$_SendTransactionRpcResponseErrorFromJson(
         Map<String, dynamic> json) =>
     _$_SendTransactionRpcResponseError(
-      id: json['id'] as String,
+      id: json['id'] as String?,
       error: SendTransactionRpcResponseErrorData.fromJson(
           json['error'] as Map<String, dynamic>),
     );

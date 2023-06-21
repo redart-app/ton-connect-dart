@@ -15,7 +15,13 @@ final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
-mixin _$SendTransactionRpcResponseSuccess {}
+mixin _$SendTransactionRpcResponseSuccess {
+  String get result => throw _privateConstructorUsedError;
+
+  @JsonKey(ignore: true)
+  $SendTransactionRpcResponseSuccessCopyWith<SendTransactionRpcResponseSuccess>
+      get copyWith => throw _privateConstructorUsedError;
+}
 
 /// @nodoc
 abstract class $SendTransactionRpcResponseSuccessCopyWith<$Res> {
@@ -24,6 +30,8 @@ abstract class $SendTransactionRpcResponseSuccessCopyWith<$Res> {
           $Res Function(SendTransactionRpcResponseSuccess) then) =
       _$SendTransactionRpcResponseSuccessCopyWithImpl<$Res,
           SendTransactionRpcResponseSuccess>;
+  @useResult
+  $Res call({String result});
 }
 
 /// @nodoc
@@ -36,14 +44,31 @@ class _$SendTransactionRpcResponseSuccessCopyWithImpl<$Res,
   final $Val _value;
   // ignore: unused_field
   final $Res Function($Val) _then;
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? result = null,
+  }) {
+    return _then(_value.copyWith(
+      result: null == result
+          ? _value.result
+          : result // ignore: cast_nullable_to_non_nullable
+              as String,
+    ) as $Val);
+  }
 }
 
 /// @nodoc
-abstract class _$$_SendTransactionRpcResponseSuccessCopyWith<$Res> {
+abstract class _$$_SendTransactionRpcResponseSuccessCopyWith<$Res>
+    implements $SendTransactionRpcResponseSuccessCopyWith<$Res> {
   factory _$$_SendTransactionRpcResponseSuccessCopyWith(
           _$_SendTransactionRpcResponseSuccess value,
           $Res Function(_$_SendTransactionRpcResponseSuccess) then) =
       __$$_SendTransactionRpcResponseSuccessCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({String result});
 }
 
 /// @nodoc
@@ -55,34 +80,67 @@ class __$$_SendTransactionRpcResponseSuccessCopyWithImpl<$Res>
       _$_SendTransactionRpcResponseSuccess _value,
       $Res Function(_$_SendTransactionRpcResponseSuccess) _then)
       : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? result = null,
+  }) {
+    return _then(_$_SendTransactionRpcResponseSuccess(
+      null == result
+          ? _value.result
+          : result // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
 }
 
 /// @nodoc
 
 class _$_SendTransactionRpcResponseSuccess
     implements _SendTransactionRpcResponseSuccess {
-  const _$_SendTransactionRpcResponseSuccess();
+  const _$_SendTransactionRpcResponseSuccess(this.result);
+
+  @override
+  final String result;
 
   @override
   String toString() {
-    return 'SendTransactionRpcResponseSuccess()';
+    return 'SendTransactionRpcResponseSuccess(result: $result)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_SendTransactionRpcResponseSuccess);
+            other is _$_SendTransactionRpcResponseSuccess &&
+            (identical(other.result, result) || other.result == result));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode;
+  int get hashCode => Object.hash(runtimeType, result);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$_SendTransactionRpcResponseSuccessCopyWith<
+          _$_SendTransactionRpcResponseSuccess>
+      get copyWith => __$$_SendTransactionRpcResponseSuccessCopyWithImpl<
+          _$_SendTransactionRpcResponseSuccess>(this, _$identity);
 }
 
 abstract class _SendTransactionRpcResponseSuccess
     implements SendTransactionRpcResponseSuccess {
-  const factory _SendTransactionRpcResponseSuccess() =
+  const factory _SendTransactionRpcResponseSuccess(final String result) =
       _$_SendTransactionRpcResponseSuccess;
+
+  @override
+  String get result;
+  @override
+  @JsonKey(ignore: true)
+  _$$_SendTransactionRpcResponseSuccessCopyWith<
+          _$_SendTransactionRpcResponseSuccess>
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 SendTransactionRpcResponseError _$SendTransactionRpcResponseErrorFromJson(
@@ -92,7 +150,7 @@ SendTransactionRpcResponseError _$SendTransactionRpcResponseErrorFromJson(
 
 /// @nodoc
 mixin _$SendTransactionRpcResponseError {
-  String get id => throw _privateConstructorUsedError;
+  String? get id => throw _privateConstructorUsedError;
   SendTransactionRpcResponseErrorData get error =>
       throw _privateConstructorUsedError;
 
@@ -110,7 +168,7 @@ abstract class $SendTransactionRpcResponseErrorCopyWith<$Res> {
       _$SendTransactionRpcResponseErrorCopyWithImpl<$Res,
           SendTransactionRpcResponseError>;
   @useResult
-  $Res call({String id, SendTransactionRpcResponseErrorData error});
+  $Res call({String? id, SendTransactionRpcResponseErrorData error});
 
   $SendTransactionRpcResponseErrorDataCopyWith<$Res> get error;
 }
@@ -129,14 +187,14 @@ class _$SendTransactionRpcResponseErrorCopyWithImpl<$Res,
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? id = null,
+    Object? id = freezed,
     Object? error = null,
   }) {
     return _then(_value.copyWith(
-      id: null == id
+      id: freezed == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       error: null == error
           ? _value.error
           : error // ignore: cast_nullable_to_non_nullable
@@ -163,7 +221,7 @@ abstract class _$$_SendTransactionRpcResponseErrorCopyWith<$Res>
       __$$_SendTransactionRpcResponseErrorCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({String id, SendTransactionRpcResponseErrorData error});
+  $Res call({String? id, SendTransactionRpcResponseErrorData error});
 
   @override
   $SendTransactionRpcResponseErrorDataCopyWith<$Res> get error;
@@ -182,14 +240,14 @@ class __$$_SendTransactionRpcResponseErrorCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? id = null,
+    Object? id = freezed,
     Object? error = null,
   }) {
     return _then(_$_SendTransactionRpcResponseError(
-      id: null == id
+      id: freezed == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       error: null == error
           ? _value.error
           : error // ignore: cast_nullable_to_non_nullable
@@ -202,15 +260,14 @@ class __$$_SendTransactionRpcResponseErrorCopyWithImpl<$Res>
 @JsonSerializable()
 class _$_SendTransactionRpcResponseError
     implements _SendTransactionRpcResponseError {
-  const _$_SendTransactionRpcResponseError(
-      {required this.id, required this.error});
+  const _$_SendTransactionRpcResponseError({this.id, required this.error});
 
   factory _$_SendTransactionRpcResponseError.fromJson(
           Map<String, dynamic> json) =>
       _$$_SendTransactionRpcResponseErrorFromJson(json);
 
   @override
-  final String id;
+  final String? id;
   @override
   final SendTransactionRpcResponseErrorData error;
 
@@ -251,7 +308,7 @@ class _$_SendTransactionRpcResponseError
 abstract class _SendTransactionRpcResponseError
     implements SendTransactionRpcResponseError {
   const factory _SendTransactionRpcResponseError(
-          {required final String id,
+          {final String? id,
           required final SendTransactionRpcResponseErrorData error}) =
       _$_SendTransactionRpcResponseError;
 
@@ -259,7 +316,7 @@ abstract class _SendTransactionRpcResponseError
       _$_SendTransactionRpcResponseError.fromJson;
 
   @override
-  String get id;
+  String? get id;
   @override
   SendTransactionRpcResponseErrorData get error;
   @override
