@@ -8,8 +8,8 @@ part 'wallet_event.g.dart';
 @freezed
 class WalletEvent extends WalletMessage with _$WalletEvent {
   const factory WalletEvent({
+    num? id,
     required WalletEventType event,
-    required num id,
     @JsonKey(readValue: WalletEvent.upperReadValue)
     @_WalletEventPayloadJsonConverter()
         required WalletEventPayload payload,

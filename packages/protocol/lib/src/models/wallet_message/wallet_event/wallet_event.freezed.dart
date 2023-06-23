@@ -20,8 +20,8 @@ WalletEvent _$WalletEventFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$WalletEvent {
+  num? get id => throw _privateConstructorUsedError;
   WalletEventType get event => throw _privateConstructorUsedError;
-  num get id => throw _privateConstructorUsedError;
   @JsonKey(readValue: WalletEvent.upperReadValue)
   @_WalletEventPayloadJsonConverter()
   WalletEventPayload get payload => throw _privateConstructorUsedError;
@@ -39,8 +39,8 @@ abstract class $WalletEventCopyWith<$Res> {
       _$WalletEventCopyWithImpl<$Res, WalletEvent>;
   @useResult
   $Res call(
-      {WalletEventType event,
-      num id,
+      {num? id,
+      WalletEventType event,
       @JsonKey(readValue: WalletEvent.upperReadValue)
       @_WalletEventPayloadJsonConverter()
           WalletEventPayload payload});
@@ -61,19 +61,19 @@ class _$WalletEventCopyWithImpl<$Res, $Val extends WalletEvent>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
+    Object? id = freezed,
     Object? event = null,
-    Object? id = null,
     Object? payload = null,
   }) {
     return _then(_value.copyWith(
+      id: freezed == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as num?,
       event: null == event
           ? _value.event
           : event // ignore: cast_nullable_to_non_nullable
               as WalletEventType,
-      id: null == id
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as num,
       payload: null == payload
           ? _value.payload
           : payload // ignore: cast_nullable_to_non_nullable
@@ -99,8 +99,8 @@ abstract class _$$_WalletEventCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {WalletEventType event,
-      num id,
+      {num? id,
+      WalletEventType event,
       @JsonKey(readValue: WalletEvent.upperReadValue)
       @_WalletEventPayloadJsonConverter()
           WalletEventPayload payload});
@@ -120,19 +120,19 @@ class __$$_WalletEventCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
+    Object? id = freezed,
     Object? event = null,
-    Object? id = null,
     Object? payload = null,
   }) {
     return _then(_$_WalletEvent(
+      id: freezed == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as num?,
       event: null == event
           ? _value.event
           : event // ignore: cast_nullable_to_non_nullable
               as WalletEventType,
-      id: null == id
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as num,
       payload: null == payload
           ? _value.payload
           : payload // ignore: cast_nullable_to_non_nullable
@@ -145,8 +145,8 @@ class __$$_WalletEventCopyWithImpl<$Res>
 @JsonSerializable()
 class _$_WalletEvent implements _WalletEvent {
   const _$_WalletEvent(
-      {required this.event,
-      required this.id,
+      {this.id,
+      required this.event,
       @JsonKey(readValue: WalletEvent.upperReadValue)
       @_WalletEventPayloadJsonConverter()
           required this.payload});
@@ -155,9 +155,9 @@ class _$_WalletEvent implements _WalletEvent {
       _$$_WalletEventFromJson(json);
 
   @override
-  final WalletEventType event;
+  final num? id;
   @override
-  final num id;
+  final WalletEventType event;
   @override
   @JsonKey(readValue: WalletEvent.upperReadValue)
   @_WalletEventPayloadJsonConverter()
@@ -165,7 +165,7 @@ class _$_WalletEvent implements _WalletEvent {
 
   @override
   String toString() {
-    return 'WalletEvent(event: $event, id: $id, payload: $payload)';
+    return 'WalletEvent(id: $id, event: $event, payload: $payload)';
   }
 
   @override
@@ -173,14 +173,14 @@ class _$_WalletEvent implements _WalletEvent {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_WalletEvent &&
-            (identical(other.event, event) || other.event == event) &&
             (identical(other.id, id) || other.id == id) &&
+            (identical(other.event, event) || other.event == event) &&
             (identical(other.payload, payload) || other.payload == payload));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, event, id, payload);
+  int get hashCode => Object.hash(runtimeType, id, event, payload);
 
   @JsonKey(ignore: true)
   @override
@@ -198,8 +198,8 @@ class _$_WalletEvent implements _WalletEvent {
 
 abstract class _WalletEvent implements WalletEvent {
   const factory _WalletEvent(
-      {required final WalletEventType event,
-      required final num id,
+      {final num? id,
+      required final WalletEventType event,
       @JsonKey(readValue: WalletEvent.upperReadValue)
       @_WalletEventPayloadJsonConverter()
           required final WalletEventPayload payload}) = _$_WalletEvent;
@@ -208,9 +208,9 @@ abstract class _WalletEvent implements WalletEvent {
       _$_WalletEvent.fromJson;
 
   @override
-  WalletEventType get event;
+  num? get id;
   @override
-  num get id;
+  WalletEventType get event;
   @override
   @JsonKey(readValue: WalletEvent.upperReadValue)
   @_WalletEventPayloadJsonConverter()
